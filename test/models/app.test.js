@@ -1,5 +1,6 @@
 //LIGAMOS LA CLASE
 const fs = require('./../../app/models/app')
+const Reader = require("./../../lib/utils/reader")
 
 describe("Prueba de unidad de proyecto: ", () =>{
 
@@ -22,6 +23,10 @@ describe("Prueba de unidad de proyecto: ", () =>{
         const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == "node");
         const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
         expect(usernamesInNode[0]).toBe("ajolonauta1");
-        expect(usernamesInNode[9]).toBe("ajolonauta10");
+    })
+
+    test("Prueba4: Exportar explorers refactorizado: ", () => {
+        const explorers = Reader.readJsonFile("explorers.json");
+        expect(typeof(explorers)).toMatch(/object/)//Verificar isi regrsa objetos
     })
 })

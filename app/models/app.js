@@ -10,7 +10,6 @@ const explorersInNode = explorers.filter((explorer) => explorer.mission == "node
 // Part4: Get the explorer's usernames in Node
 const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == "node");
 const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
-console.log(usernamesInNode);
 
 // DEAD CODE: Part 5,6,7, please remove this and go to Part 8!
 
@@ -20,7 +19,7 @@ console.log(usernamesInNode);
 // Score: 5, Trick: 5.
 
 const assignFizzTrick = function(explorer){
-    if(explorer.score%3 === 0){
+    if(explorer.score % 3 === 0){
         explorer.trick = "FIZZ";
         return explorer;
     }else{
@@ -59,7 +58,11 @@ const assignFizzBuzzTrick = function(explorer){
 
 const explorersInNodeAndFizzBuzzTrick = explorersInNode.map((explorer) => assignFizzBuzzTrick(explorer));
 
-// Part 8: Get a list of the explorers in node, if the score is divisible by 5 and 3, set the property trick and the value FIZZBUZZ, if is just divisible by 5 set the property trcik and the value BUZZ, if is just divisible by 3 set the property trick and the value FIZZ, otherwise set the property trick and the score value. TODO
+/* Part 8: Get a list of the explorers in node, 
+if the score is divisible by 5 and 3, set the property trick and the value FIZZBUZZ, 
+if is just divisible by 5 set the property trcik and the value BUZZ, 
+if is just divisible by 3 set the property trick and the value FIZZ, 
+otherwise set the property trick and the score value. TODO */
 
 
 module.exports = fs;
