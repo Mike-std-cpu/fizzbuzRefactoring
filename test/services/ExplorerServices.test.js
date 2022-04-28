@@ -22,9 +22,21 @@ describe("Pruebas de unidad de la clase ExplorersServices: ", () =>{
                 return explorersInNode.length
             }
         }
-
-       const myNumberExplorers =ExplorerServices.getAmountOfExplorersByMission(explorers, "node");
+            const myNumberExplorers =ExplorerServices.getAmountOfExplorersByMission(explorers, "node");
 
     expect(myNumberExplorers).toBe(10);
+    })
+
+    test("Prueba 3: Metodo de UserNames explorersn in node: ", () => {
+        const explorers = Reader.readJsonFile("explorers.json"); // En la clase lo importaremos
+        class ExplorerServices{
+        static getExplorersUsernamesByMission(explorers, mission){
+            const usernamesInNode = explorers.map((explorer) => explorer.githubUsername);
+            usernamesInNode.filter((explorers) => explorers.mission == mission)
+            return usernamesInNode;
+          }
+        }
+        const number = ExplorerServices.getExplorersUsernamesByMission(explorers,"node").length;
+    expect(number).toBe(15);
     })
 })
