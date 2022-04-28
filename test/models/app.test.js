@@ -27,6 +27,8 @@ describe("Prueba de unidad de proyecto: ", () =>{
 
     test("Prueba4: Exportar explorers refactorizado: ", () => {
         const explorers = Reader.readJsonFile("explorers.json");
+        expect(explorers[0].name).toBe("Woopa1");//Veririficar componentes
+        expect(explorers[11].score).toBe(12); // Verificar componentes
         expect(typeof(explorers)).toMatch(/object/)//Verificar isi regrsa objetos
     })
 })
