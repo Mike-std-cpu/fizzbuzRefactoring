@@ -8,6 +8,7 @@ describe("Prueba de unidad de proyecto: ", () =>{
         const rawdata = fs.readFileSync("explorers.json");
         const explorers = JSON.parse(rawdata);
         expect(explorers).not.toBe(null);
+        expect(explorers[0].mission).toBe("node");
     })
 
     test("Prueba2 : De tamaño de lista de objetos explorers: ", () => {
